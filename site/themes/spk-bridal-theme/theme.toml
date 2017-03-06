@@ -1,0 +1,12 @@
+name = "spk-bridal-theme"
+license = "MIT"
+licenselink = "https://jodie.io/licence/mit"
+description = "A featured theme for the bridal collection"
+homepage = "spk.bridal.jodie.io"
+tags = ["bridal", "rings", "spinelli", "kilcollin", "wedding", "groom"]
+features = ["", ""]
+min_version = 0.1
+
+[author]
+  name = "j0die"
+  homepage = "spk.bridal.jodie.io"
