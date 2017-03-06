@@ -16,14 +16,14 @@ const defaultArgs = ["-d", "../dist", "-s", "site", "-v"];
 gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
 
-gulp.task("build", ["css", "js", "hugo"]);
-gulp.task("build-preview", ["css", "js", "hugo-preview"]);
+gulp.task("build", ["css", "sass", "js", "hugo"]);
+gulp.task("build-preview", ["css", "sass", "js", "hugo-preview"]);
 
 gulp.task('sass', function() {
     gulp.src('./src/sass/**/*.scss')
         .pipe(sass({
           outputStyle: 'compressed',
-         includePaths: ['node_modules/susy/sass']
+         includePaths: ['./node_modules/susy/sass']
         }).on('error', sass.logError))
         .pipe(gulp.dest('./dist/css'));
 });
@@ -49,7 +49,7 @@ gulp.task("js", (cb) => {
   });
 });
 
-gulp.task("server", ["hugo", "css", "js"], () => {
+gulp.task("server", ["hugo", "sass", "css", "js"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"

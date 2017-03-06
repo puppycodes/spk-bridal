@@ -10,17 +10,31 @@ export default {
       },
       {test: /\.json$/, loader: "json-loader"},
       {
-        loader: "babel",
+        loader: "babel-loader",
         test: /\.js?$/,
         exclude: /node_modules/,
         query: {cacheDirectory: true}
-      },
-      {
-       test: /\.scss$/,
-       loader: 'style!css!sass'
       }
     ]
   },
+
+  module: {
+      rules: [{
+          test: /\.scss$/,
+          use: [{
+              loader: "style-loader"
+          }, {
+              loader: "css-loader"
+          }, {
+              loader: "sass-loader",
+              options: {
+                  includePaths: ["./src/sass/main.scss", "./src/css/main.css"]
+              }
+          }]
+      }]
+  },
+
+
 
   plugins: [
     new webpack.ProvidePlugin({
