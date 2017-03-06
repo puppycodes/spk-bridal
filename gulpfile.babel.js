@@ -1,4 +1,5 @@
 import gulp from "gulp";
+import sass from "gulp-sass";
 import cp from "child_process";
 import gutil from "gulp-util";
 import postcss from "gulp-postcss";
@@ -17,6 +18,15 @@ gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture
 
 gulp.task("build", ["css", "js", "hugo"]);
 gulp.task("build-preview", ["css", "js", "hugo-preview"]);
+
+gulp.task('sass', function() {
+    gulp.src('./src/sass/**/*.scss')
+        .pipe(sass({
+          outputStyle: 'compressed',
+         includePaths: ['node_modules/susy/sass']
+        }).on('error', sass.logError))
+        .pipe(gulp.dest('./dist/css'));
+});
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
@@ -46,6 +56,7 @@ gulp.task("server", ["hugo", "css", "js"], () => {
     }
   });
   gulp.watch("./src/js/**/*.js", ["js"]);
+  gulp.watch("./src/sass/**/*.scss", ["sass"]);
   gulp.watch("./src/css/**/*.css", ["css"]);
   gulp.watch("./site/**/*", ["hugo"]);
 });
