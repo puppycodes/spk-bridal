@@ -11,6 +11,10 @@
     "start": "gulp server",
     "lint": "eslint src"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/j0die/spk-bridal"
+  },
   "author": "puppycodes",
   "license": "MIT",
   "dependencies": {
@@ -38,7 +42,12 @@
     "postcss-import": "^8.1.2",
     "postcss-loader": "^0.9.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.1",
+    "webpack": "^2.2.1",
     "whatwg-fetch": "^1.0.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.2",
+    "susy": "^2.2.12"
   }
 }

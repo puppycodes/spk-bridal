@@ -14,6 +14,10 @@ export default {
         test: /\.js?$/,
         exclude: /node_modules/,
         query: {cacheDirectory: true}
+      },
+      {
+       test: /\.scss$/,
+       loader: 'style!css!sass'
       }
     ]
   },
