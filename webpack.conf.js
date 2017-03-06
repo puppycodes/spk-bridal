@@ -26,14 +26,10 @@ export default {
           }, {
               loader: "css-loader"
           }, {
-              loader: "sass-loader",
-              options: {
-                  includePaths: ["./src/sass/main.scss", "./src/css/main.css"]
-              }
+              loader: "sass-loader"
           }]
       }]
   },
-
 
 
   plugins: [

@@ -1,5 +1,5 @@
 {
-  "name": "spk-bridal",
+  "name": "spk-bridal-theme",
   "version": "1.0.0",
   "description": "Spinelli Kilcollin featured bridal site",
   "main": "index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/j0die/spk-bridal/"
+    "url": "//github.com/j0die/spk-bridal"
   },
   "author": "puppycodes",
   "license": "MIT",
@@ -42,6 +42,7 @@
     "postcss-import": "^8.1.2",
     "postcss-loader": "^0.9.1",
     "url-loader": "^0.5.7",
+    "v8flags": "^2.0.11",
     "webpack": "^2.2.1",
     "whatwg-fetch": "^1.0.0"
   },
